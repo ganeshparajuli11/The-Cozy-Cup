@@ -1,0 +1,37 @@
+/* ================================================================
+   THE COZY CUP — DESIGN SYSTEM
+   Single source of truth. Never hardcode values in components.
+   All @theme values become Tailwind utility classes automatically.
+   ================================================================ */
+
+@theme {
+  /* ---- Colors ---- */
+  --color-espresso: #122620;   /* deep evergreen — primary text */
+  --color-roast: #1F3D35;      /* forest mid-tone — headings */
+  --color-caramel: #D0A15E;    /* toasted honey — CTAs, highlights */
+  --color-cream: #F3EFE3;      /* warm linen background */
+  --color-oat: #E6E0CD;        /* secondary background, cards */
+  --color-steam: #FAF8F1;      /* soft light section backgrounds */
+  --color-mist: #6F7E75;       /* muted supporting text */
+  --color-charcoal: #0F1715;   /* dark sections and overlays */
+
+  /* ---- Extended Spacing (Tailwind v4 auto-generates p-18, p-22, etc.) ---- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-36: 9rem;
+  --spacing-42: 10.5rem;
+}
+
+/* ---- Motion Variables (not Tailwind utilities — pure CSS custom props) ---- */
+:root {
+  --duration-slow: 0.9s;
+  --duration-medium: 0.6s;
+  --duration-fast: 0.3s;
+
+  /* Use these numerically in framer-motion: e.g., duration: 0.9 */
+  --ease-steam: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-warm: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* As arrays for motion/react: [0.16, 1, 0.3, 1] and [0.25, 0.1, 0.25, 1] */
+}
