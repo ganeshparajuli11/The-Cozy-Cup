@@ -125,9 +125,9 @@ export function HorizontalDrinks() {
         </div>
 
         {/* Horizontal scroll snap on mobile */}
-        <div className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 -mx-6 px-6">
+        <div className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory overscroll-x-contain pb-4 -mx-6 px-6">
           {FEATURED.map((drink) => (
-            <div key={drink.id} className="snap-start flex-shrink-0 w-[80vw] max-w-[300px]">
+            <div key={drink.id} className="snap-start flex-shrink-0 w-[84vw] max-w-[320px]">
               <DrinkCard drink={drink} variant="horizontal" />
             </div>
           ))}

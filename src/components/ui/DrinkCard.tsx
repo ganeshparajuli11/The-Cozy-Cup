@@ -28,7 +28,7 @@ export function DrinkCard({ drink, variant = 'grid' }: DrinkCardProps) {
       className={`
         flex flex-col bg-steam overflow-hidden group cursor-default
         ${isHorizontal
-          ? 'w-[320px] md:w-[360px] flex-shrink-0 h-[500px] md:h-[560px]'
+          ? 'w-full md:w-[360px] flex-shrink-0 h-[500px] md:h-[560px]'
           : 'w-full'
         }
       `}
