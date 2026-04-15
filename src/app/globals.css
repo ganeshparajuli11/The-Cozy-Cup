@@ -4,57 +4,84 @@
    ================================================================ */
 
 @import "tailwindcss";
-@import "../styles/tokens.css";
-@source "../**/*.{ts,tsx,js,jsx,mdx}";
+
+@theme {
+  /* ---- Colors ---- */
+  --color-espresso: #122620;
+  --color-roast: #1F3D35;
+  --color-caramel: #D0A15E;
+  --color-cream: #F3EFE3;
+  --color-oat: #E6E0CD;
+  --color-steam: #FAF8F1;
+  --color-mist: #6F7E75;
+  --color-charcoal: #0F1715;
+
+  /* ---- Extended Spacing ---- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-36: 9rem;
+  --spacing-42: 10.5rem;
+}
 
 /* ---- Font theme: map next/font CSS vars to Tailwind font utilities ---- */
-/* next/font sets --font-playfair, --font-dm-sans, --font-cormorant on <html> */
 @theme inline {
   --font-display: var(--font-playfair);
   --font-body: var(--font-dm-sans);
   --font-accent: var(--font-cormorant);
 }
 
-/* ---- Base Reset ---- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ---- Motion Variables (pure CSS custom props, not Tailwind utilities) ---- */
+:root {
+  --duration-slow: 0.9s;
+  --duration-medium: 0.6s;
+  --duration-fast: 0.3s;
+  --ease-steam: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-warm: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: auto; /* Lenis handles smooth scroll */
-}
+/* ---- Base Reset & Global Styles ---- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  background-color: var(--color-cream);
-  color: var(--color-espresso);
-  font-family: var(--font-dm-sans), "DM Sans", Inter, sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
 
-/* ---- Typography defaults ---- */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+    font-family: var(--font-dm-sans), "DM Sans", Inter, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-/* ---- Selection ---- */
-::selection {
-  background-color: var(--color-caramel);
-  color: var(--color-cream);
-}
+  /* ---- Typography defaults ---- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
 
-/* ---- Focus visible (keyboard nav) ---- */
-:focus-visible {
-  outline: 2px solid var(--color-caramel);
-  outline-offset: 3px;
+  /* ---- Selection ---- */
+  ::selection {
+    background-color: var(--color-caramel);
+    color: var(--color-cream);
+  }
+
+  /* ---- Focus visible (keyboard nav) ---- */
+  :focus-visible {
+    outline: 2px solid var(--color-caramel);
+    outline-offset: 3px;
+  }
 }
 
 /* ---- Skip to content ---- */

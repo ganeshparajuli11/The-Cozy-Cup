@@ -119,7 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${playfair.variable} ${dmSans.variable} ${cormorant.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body suppressHydrationWarning>
         {/* Skip to main content — accessibility */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
